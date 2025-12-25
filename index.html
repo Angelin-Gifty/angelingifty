@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Angelin Gifty | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelin Gifty Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- Left Sidebar / Dashboard -->
+    <!-- Sidebar -->
     <aside class="sidebar">
         <h1>Angelin Gifty</h1>
         <p class="degree">Undergraduate Student</p>
 
+        <!-- Navigation -->
         <nav>
             <ul>
                 <li onclick="showSection('home')" class="active">Home</li>
@@ -25,77 +27,84 @@
             </ul>
         </nav>
 
+        <!-- GitHub & LinkedIn Links -->
         <div class="links">
-    <a href="https://github.com/angelingifty" target="_blank">
-        <img src="images/github.png" alt="GitHub" class="icon">
-    </a>
-    <a href="https://linkedin.com/in/your-link" target="_blank">
-     <img src="images/linkedin.png" alt="LinkedIn" class="icon">
-    </a>
-</div>
+            <a href="https://github.com/angelingifty" target="_blank">
+                <img src="images/github.png" alt="GitHub" class="icon"> GitHub
+            </a>
+            <a href="https://linkedin.com/in/your-link" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn" class="icon"> LinkedIn
+            </a>
+        </div>
     </aside>
 
-    <!-- Center / Main Content -->
-    <main class="content">
-        <!-- Home / default view -->
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Home Section (Default) -->
         <section id="home" class="active">
-            <h1>Angelin Gifty</h1>
-            <p>Welcome to my portfolio!</p>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hello! I am Angelin Gifty. Explore my education, skills, projects, and resume using the sidebar.</p>
         </section>
 
+        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>
-                I am a motivated undergraduate student currently pursuing my degree in Computer Science with Data Analytics. 
-                I am eager to contribute my growing knowledge to dynamic teams and expand my experience in the technology field.
-            </p>
+            <p>I am an undergraduate student pursuing my degree. I am passionate about web development, coding, and learning new technologies.</p>
         </section>
 
+        <!-- Education Section -->
         <section id="education">
             <h2>Education</h2>
-            <p>Completed my Schooling in St.John Bosco matric.Hr.Sec School
-            <p>Pursuing Undergraduate Degree in Computer Science with Data Analytics – Sankara College of Science and Commerce,2026</p>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
             <ul>
-                <li>Honours Diploma in Computer Application(HDCA)</li>
-                <li>Python for Data Science</li>
+                <li>Currently pursuing undergraduate degree</li>
+                <!-- Add more education items here -->
             </ul>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Projects will be added soon.</p>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Git & GitHub</li>
+                <li>Basic SQL</li>
+                <!-- Add more skills here -->
+            </ul>
         </section>
 
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>Portfolio Website</li>
+                <li>Other Projects...</li>
+            </ul>
+        </section>
+
+        <!-- Resume Section -->
         <section id="resume">
             <h2>Resume</h2>
-            <p>
-                You can download my resume here: 
-                <a href="resume.pdf" target="_blank">Download Resume</a>
-            </p>
+            <p>You can view my full resume <a href="resume.pdf" target="_blank">here</a>.</p>
         </section>
-    </main>
+    </div>
 
 </div>
 
-<!-- JavaScript for showing content in center -->
+<!-- JavaScript to switch sections -->
 <script>
 function showSection(sectionId) {
     // Hide all sections
-    document.querySelectorAll('main section').forEach(section => {
-        section.classList.remove('active');
-    });
-    // Show the selected section
+    const sections = document.querySelectorAll('.content section');
+    sections.forEach(sec => sec.classList.remove('active'));
+
+    // Show selected section
     document.getElementById(sectionId).classList.add('active');
 
-    // Highlight the active sidebar item
-    document.querySelectorAll('.sidebar nav ul li').forEach(li => {
-        li.classList.remove('active');
-    });
-    document.querySelector('.sidebar nav ul li[onclick="showSection(\'' + sectionId + '\')"]').classList.add('active');
+    // Update active class in sidebar
+    const links = document.querySelectorAll('.sidebar nav ul li');
+    links.forEach(li => li.classList.remove('active'));
+    const selected = Array.from(links).find(li => li.textContent.toLowerCase() === sectionId);
+    if(selected) selected.classList.add('active');
 }
 </script>
 
