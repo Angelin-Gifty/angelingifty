@@ -31,7 +31,7 @@
         </div>
     </aside>
 
-    <!-- Right / Center Content -->
+    <!-- Center / Main Content -->
     <main class="content">
         <!-- Home / default view -->
         <section id="home" class="active">
@@ -80,17 +80,17 @@
 
 </div>
 
-<!-- JavaScript for dynamic sections -->
+<!-- JavaScript for showing content in center -->
 <script>
 function showSection(sectionId) {
     // Hide all sections
     document.querySelectorAll('main section').forEach(section => {
         section.classList.remove('active');
     });
-    // Show selected section
+    // Show the selected section
     document.getElementById(sectionId).classList.add('active');
 
-    // Highlight active sidebar item
+    // Highlight the active sidebar item
     document.querySelectorAll('.sidebar nav ul li').forEach(li => {
         li.classList.remove('active');
     });
