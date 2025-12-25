@@ -8,60 +8,80 @@
 <body>
 
 <div class="container">
-    <!-- Left Dashboard -->
+
+    <!-- Left Sidebar / Dashboard -->
     <aside class="sidebar">
         <h1>Angelin Gifty</h1>
-        <p class="degree">Bachelor’s Degree</p>
+        <p class="degree">Undergraduate Student</p>
 
         <nav>
-    <ul>
-        <li onclick="showSection('about')">About Me</li>
-        <li onclick="showSection('education')">Education</li>
-        <li onclick="showSection('skills')">Skills</li>
-        <li onclick="showSection('projects')">Projects</li>
-    </ul>
-</nav>
+            <ul>
+                <li onclick="showSection('home')" class="active">Home</li>
+                <li onclick="showSection('about')">About Me</li>
+                <li onclick="showSection('education')">Education</li>
+                <li onclick="showSection('skills')">Skills</li>
+                <li onclick="showSection('projects')">Projects</li>
+                <li onclick="showSection('resume')">Resume</li>
+            </ul>
+        </nav>
 
         <div class="links">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">LinkedIn</a>
+            <a href="https://github.com/angelingifty" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/your-link" target="_blank">LinkedIn</a>
         </div>
     </aside>
 
-    <!-- Right Content -->
+    <!-- Right / Center Content -->
     <main class="content">
-    <!-- About Me -->
-    <section id="about" class="active">
-        <h2>About Me</h2>
-        <p>
-            I am a motivated undergraduate student currently pursuing my degree in Computer Science with Data Analytics. 
-            I am eager to contribute my growing knowledge to dynamic teams and expand my experience in the technology field.
-        </p>
-    </section>
+        <!-- Home / default view -->
+        <section id="home" class="active">
+            <h1>Angelin Gifty</h1>
+            <p>Welcome to my portfolio!</p>
+        </section>
 
-    <!-- Education -->
-    <section id="education">
-        <h2>Education</h2>
-        <p>Undergraduate Degree in [Your Major/Field] – [Your College Name], [Expected Graduation Year]</p>
-    </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a motivated undergraduate student currently pursuing my degree in [Your Major/Field]. 
+                I have a strong interest in web development and software technologies, with hands-on experience in HTML, CSS, Git & GitHub.
+                I enjoy building practical projects that solve real-world problems and continuously improving my skills.
+                I am eager to contribute my growing knowledge to dynamic teams and expand my experience in the technology field.
+            </p>
+        </section>
 
-    <!-- Skills -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Honours Diploma in Computer Application(HDCA)</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Undergraduate Degree in [Your Major/Field] – [Your College Name], Expected [Year]</p>
+        </section>
 
-    <!-- Projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Projects will be added soon.</p>
-    </section>
-</main>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Projects will be added soon.</p>
+        </section>
+
+        <section id="resume">
+            <h2>Resume</h2>
+            <p>
+                You can download my resume here: 
+                <a href="resume.pdf" target="_blank">Download Resume</a>
+            </p>
+        </section>
+    </main>
+
 </div>
-    <script>
+
+<!-- JavaScript for dynamic sections -->
+<script>
 function showSection(sectionId) {
     // Hide all sections
     document.querySelectorAll('main section').forEach(section => {
@@ -69,6 +89,7 @@ function showSection(sectionId) {
     });
     // Show selected section
     document.getElementById(sectionId).classList.add('active');
+
     // Highlight active sidebar item
     document.querySelectorAll('.sidebar nav ul li').forEach(li => {
         li.classList.remove('active');
