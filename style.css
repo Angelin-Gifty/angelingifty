@@ -1,30 +1,35 @@
+/* Reset & Fonts */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f6f8;
+    background-color: #f0f4f8;
     color: #333;
 }
 
+/* Container */
 .container {
     display: flex;
     min-height: 100vh;
 }
 
+/* Sidebar */
 .sidebar {
-    width: 260px;
-    background-color: #1f2933;
+    width: 280px;
+    background: linear-gradient(180deg, #1f2933, #111827);
     color: #ffffff;
     padding: 30px 20px;
+    position: fixed;
+    height: 100%;
 }
 
 .sidebar h1 {
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: 24px;
+    margin-bottom: 6px;
 }
 
 .sidebar .degree {
@@ -41,11 +46,17 @@ body {
 .sidebar nav ul li {
     margin: 12px 0;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
+.sidebar nav ul li.active,
 .sidebar nav ul li:hover {
-    color: #60a5fa;
+    background-color: #3b82f6;
+    color: #ffffff;
+    transform: translateX(5px);
 }
 
 .links a {
@@ -54,33 +65,71 @@ body {
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 14px;
+    transition: color 0.3s ease;
 }
 
 .links a:hover {
+    color: #ffffff;
     text-decoration: underline;
 }
 
+/* Main Content */
 .content {
+    margin-left: 280px;
+    padding: 50px;
     flex: 1;
-    padding: 40px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .content section {
-    margin-bottom: 35px;
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+.content section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .content h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 15px;
     color: #1f2933;
+    border-bottom: 2px solid #3b82f6;
+    display: inline-block;
+    padding-bottom: 4px;
 }
 
 .content p,
 .content ul {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 .content ul {
     margin-left: 20px;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+}
+   
