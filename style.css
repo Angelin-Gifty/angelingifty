@@ -38,6 +38,7 @@ body {
     margin-bottom: 30px;
 }
 
+/* Sidebar navigation */
 .sidebar nav ul {
     list-style: none;
     margin-bottom: 30px;
@@ -59,18 +60,25 @@ body {
     transform: translateX(5px);
 }
 
+/* Sidebar links (GitHub & LinkedIn) */
 .links a {
-    display: block;
-    color: #60a5fa;
-    text-decoration: none;
-    margin-bottom: 10px;
+    display: flex;           /* Align icon and text in a row */
+    align-items: center;     /* Vertically center icon and text */
+    color: #60a5fa;          /* Blue color for text */
+    text-decoration: none;   /* Remove underline */
+    margin-bottom: 12px;     /* Space between links */
     font-size: 14px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.links a .icon {
+    width: 20px;            /* Icon width */
+    height: 20px;           /* Icon height */
+    margin-right: 8px;      /* Space between icon and text */
 }
 
 .links a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+    color: #ffffff;          /* Change text color on hover */
 }
 
 /* Main Content */
