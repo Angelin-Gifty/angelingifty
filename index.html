@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angelin Gifty Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,14 +11,16 @@
 <div class="container">
 
     <!-- Sidebar -->
-    <div class="profile-header">
-    <img src="images/profile.jpg" alt="Angelin Gifty" class="profile-pic">
-    <div>
-        <h1>Angelin Gifty I</h1>
-        <p class="degree">Undergraduate Student</p>
-    </div>
-</div>
+    <aside class="sidebar">
 
+        <!-- Profile Section -->
+        <div class="profile-header">
+            <img src="images/profile.jpg" alt="Angelin Gifty" class="profile-pic">
+            <div>
+                <h1>Angelin Gifty I</h1>
+                <p class="degree">Undergraduate Student</p>
+            </div>
+        </div>
 
         <!-- Navigation -->
         <nav>
@@ -32,86 +34,83 @@
             </ul>
         </nav>
 
-        <!-- GitHub & LinkedIn Links -->
+        <!-- Links -->
         <div class="links">
             <a href="https://github.com/angelingifty" target="_blank">
-                <img src="images/github.png" alt="GitHub" class="icon"> GitHub
+                <img src="images/github.png" class="icon"> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/angelin-gifty-i-7589a2368/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                <img src="images/linkedin.png" alt="LinkedIn" class="icon"> LinkedIn
+            <a href="https://www.linkedin.com/in/angelin-gifty-i-7589a2368/" target="_blank">
+                <img src="images/linkedin.png" class="icon"> LinkedIn
             </a>
         </div>
+
     </aside>
 
     <!-- Main Content -->
     <div class="content">
-        <!-- Home Section (Default) -->
+
         <section id="home" class="active">
             <h1>Welcome to My Portfolio</h1>
             <p>Hello! I am Angelin Gifty. Explore my education, skills, projects, and resume using the sidebar.</p>
         </section>
 
-        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>I am an undergraduate student pursuing my degree. I am passionate about web development and learning new technologies.</p>
+            <p>I am an undergraduate student passionate about web development and learning new technologies.</p>
         </section>
 
-        <!-- Education Section -->
         <section id="education">
             <h2>Education</h2>
             <ul>
-                <li>Completed my schooling in St.John Bosco Matric.Hr.Sec School</li>
-                <li>Currently pursuing undergraduate degree in Computer Science with Data Analytics - Sankara College of Science and Commerce</li>
-                <!-- Add more education items here -->
+                <li>St. John Bosco Matric Hr. Sec School</li>
+                <li>B.Sc Computer Science with Data Analytics – Sankara College</li>
             </ul>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills">
             <h2>Skills</h2>
             <ul>
-                <li>Honors Diploma in Computer Application(HDCA)</li>
+                <li>HDCA</li>
                 <li>GitHub</li>
-                <!-- Add more skills here -->
             </ul>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
             <ul>
                 <li>Portfolio Website</li>
-                <li>will update others soon...</li>
+                <li>More coming soon...</li>
             </ul>
         </section>
 
-        <!-- Resume Section -->
         <section id="resume">
             <h2>Resume</h2>
-            <p>You can view my full resume <a href="resume.pdf" target="_blank">here</a>.</p>
+            <p><a href="resume.pdf" target="_blank">View Resume</a></p>
         </section>
+
     </div>
 
 </div>
 
-<!-- JavaScript to switch sections -->
 <script>
 function showSection(sectionId) {
+
     // Hide all sections
-    const sections = document.querySelectorAll('.content section');
-    sections.forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('.content section')
+        .forEach(section => section.classList.remove('active'));
 
     // Show selected section
-    document.getElementById(sectionId).classList.add('active');
+    document.getElementById(sectionId)
+        .classList.add('active');
 
-    // Update active class in sidebar
-    const links = document.querySelectorAll('.sidebar nav ul li');
-    links.forEach(li => li.classList.remove('active'));
-    const selected = Array.from(links).find(li => li.textContent.toLowerCase() === sectionId);
-    if(selected) selected.classList.add('active');
+    // Update sidebar active state
+    document.querySelectorAll('.sidebar nav ul li')
+        .forEach(li => li.classList.remove('active'));
+
+    event.target.classList.add('active');
 }
 </script>
 
 </body>
 </html>
+
