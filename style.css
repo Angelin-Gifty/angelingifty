@@ -87,3 +87,40 @@ nav ul li.active {
 .content section.active {
     display: block;
 }
+.connect {
+    margin-top: auto;
+    border-top: 1px solid #475569;
+    padding-top: 15px;
+}
+
+.connect h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.connect p {
+    font-size: 13px;
+    margin: 6px 0;
+}
+
+.connect a {
+    color: white;
+    text-decoration: none;
+}
+
+.connect-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.connect-icons img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+}
+
+.connect-icons img:hover {
+    transform: scale(1.2);
+}
+
