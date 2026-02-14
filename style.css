@@ -1,168 +1,84 @@
-/* Reset & Fonts */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
-    background-color: #f0f4f8;
-    color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Container */
 .container {
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar / Dashboard */
 .sidebar {
-    width: 280px;
-    background: linear-gradient(180deg, #1f2933, #111827);
-    color: #ffffff;
-    padding: 30px 20px;
-    position: fixed;
-    height: 100%;
+    width: 260px;
+    background: #1e293b;
+    color: white;
+    padding: 20px;
 }
 
-.sidebar h1 {
-    font-size: 24px;
-    margin-bottom: 6px;
-}
-
-.sidebar .degree {
-    font-size: 14px;
-    color: #cbd5e1;
-    margin-bottom: 30px;
-}
-
-/* Sidebar navigation */
-.sidebar nav ul {
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.sidebar nav ul li {
-    margin: 12px 0;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.sidebar nav ul li.active,
-.sidebar nav ul li:hover {
-    background-color: #3b82f6;
-    color: #ffffff;
-    transform: translateX(5px);
-}
-
-/* Sidebar links (GitHub & LinkedIn) */
-.links a {
-    display: flex;           /* Align icon and text in a row */
-    align-items: center;     /* Vertically center icon and text */
-    color: #60a5fa;          /* Blue color for text */
-    text-decoration: none;   /* Remove underline */
-    margin-bottom: 12px;     /* Space between links */
-    font-size: 14px;
-    transition: all 0.3s ease; /* Smooth hover effect */
-}
-
-.links a .icon {
-    width: 20px;            /* Icon width */
-    height: 20px;           /* Icon height */
-    margin-right: 8px;      /* Space between icon and text */
-    .links a img[src*="github"] {
-    filter: invert(1);  /* Makes black icon white */
-}
-}
-
-.links a:hover {
-    color: #ffffff;          /* Change text color on hover */
-}
-
-/* Main Content */
-.content {
-    margin-left: 280px;
-    padding: 50px;
-    flex: 1;
-    background-color: #ffffff;
-    min-height: 100vh;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.content section {
-    display: none;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.5s ease;
-}
-
-.content section.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.content h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: #1f2933;
-}
-
-.content h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: #1f2933;
-    border-bottom: 2px solid #3b82f6;
-    display: inline-block;
-    padding-bottom: 4px;
-}
-
-.content p,
-.content ul {
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.content ul {
-    margin-left: 20px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .content {
-        margin-left: 0;
-        padding: 30px 20px;
-    }
-   /* Profile Header Alignment */
 .profile-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 20px;
+    margin-bottom: 20px;
 }
 
-/* Small Circular DP */
 .profile-pic {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid white;
+    border: 2px solid white;
 }
 
+.degree {
+    font-size: 14px;
+    margin-top: 4px;
+    color: #cbd5e1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+nav ul li:hover,
+nav ul li.active {
+    background: #334155;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.content section {
+    display: none;
+}
+
+.content section.active {
+    display: block;
 }
