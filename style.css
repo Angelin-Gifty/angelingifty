@@ -14,8 +14,6 @@ body {
     background: #1e293b;
     color: white;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Profile Section */
@@ -23,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .profile-pic {
@@ -64,44 +62,6 @@ nav ul li.active {
     background: #334155;
 }
 
-/* Connect Section */
-.connect {
-    margin-top: auto;
-    border-top: 1px solid #475569;
-    padding-top: 15px;
-}
-
-.connect h3 {
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.connect p {
-    font-size: 13px;
-    margin: 6px 0;
-}
-
-.connect a {
-    color: white;
-    text-decoration: none;
-}
-
-.connect-icons {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.connect-icons img {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s;
-}
-
-.connect-icons img:hover {
-    transform: scale(1.2);
-}
-
 /* Main Content */
 .content {
     flex: 1;
@@ -114,4 +74,21 @@ nav ul li.active {
 
 .content section.active {
     display: block;
+}
+
+/* Contact Section */
+.contact-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.contact-icons img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons img:hover {
+    transform: scale(1.2);
 }
