@@ -84,8 +84,11 @@ nav ul li.active {
 }
 
 .contact-icons img {
-    width: 18px;
-    height: 18px;
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
